@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <head>
+        <!-- Link to Google Font: Newsreader -->
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
+
+    </head>
+    <style>
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            font-family: 'Newsreader', serif;
+            color: #907F4F;
+        }
+
+        button {
+            background-color: #907F4F;
+            border: 0;
+            padding: 10px 20px;
+            font-family: 'Newsreader', serif;
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section
+        style="height: 100vh; background-image: url(./assets/imgs/Rectangle\ 1.png); background-position: center; background-size: cover;">
+        <div class="container h-100">
+            <div class="row justify-content-center align-items-center g-2 h-100 ">
+                <div class="col-12 d-flex justify-content-center align-items-center flex-column ">
+                    <div><img style="width: 20vw;" src="./assets/imgs/IMG_1592-removebg-preview 2 (1).png" alt=""></div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="container  d-flex justify-content-center al flex-column ">
+            <h1 class="text-center" style="font-family: 'Newsreader', serif ; color: #907F4F;">Vietnamese seafood
+                cuisine</h1>
+            <p class="text-center">"Immerse yourself in the distinctive flavors of crab and shrimp, perfectly paired
+                with expertly crafted sauces, creating an unforgettable dining experience. Each dish is a perfect blend
+                of fresh seafood and top-tier culinary artistry, all with one goal in mind: to bring you the most
+                exceptional meals."</p>
+            <div class="row justify-content-center align-items-center g-2 "
+                style="margin-left: auto; margin-right: auto; ">
+                <div class="col "><img class="w-100" src="./assets/imgs/h (2).png" alt=""></div>
+                <div class="col "><img class="w-100" src="./assets/imgs/h (4).png" alt=""></div>
+                <div class="col "><img class="w-100" src="./assets/imgs/h (3).png" alt=""></div>
+                <div class="col "><img class="w-100" src="./assets/imgs/h (1).png" alt=""></div>
+            </div>
+
+        </div>
+        <div><img src="./assets/imgs/background.png" class="w-100" alt=""></div>
+    </section>
+    <style>
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            margin: 5px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #000;
+            /* hoặc màu bạn muốn */
+        }
+    </style>
+    <section>
+        <div class="container">
+            <h1 class="text-center">The Menu</h1>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col text-center d-flex justify-content-center">
+                    <!-- Tabs -->
+                    <p class="tab active" data-target="menu">Menu</p>
+                    <p class="tab" data-target="autumn">Autumn</p>
+                </div>
+            </div>
+            <!-- Menu Row -->
+            <div class="row justify-content-center align-items-center g-2 menu-row">
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/mn (1).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/mn (2).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/mn (3).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/mn (4).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/mn (5).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/mn (6).png" class="w-100" alt=""></div>
+            </div>
+            <!-- Autumn Row -->
+            <div class="row justify-content-center align-items-center g-2 autumn-row" style="display: none;">
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/b (1).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/b (2).png" class="w-100" alt=""></div>
+                <div class="col-12 col-md-6 col-lg-4"><img src="./assets/imgs/b (3).png" class="w-100" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const rows = document.querySelectorAll('.row');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const target = this.getAttribute('data-target');
+
+                    // Remove 'active' class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Hide all rows
+                    rows.forEach(row => row.style.display = 'none');
+
+                    // Add 'active' class to clicked tab
+                    this.classList.add('active');
+
+                    // Show the targeted row
+                    document.querySelector(`.${target}-row`).style.display = 'flex';
+                });
+            });
+        });
+    </script>
+
+
+    <section
+        style="background-image: url(./assets/imgs/container-fill\ form.png); height: 100vh; background-position: center; background-size: cover;">
+
+        <div class="container h-100 justify-content-center align-items-center   d-flex">
+            <div class="row justify-content-center align-items-center g-2 d-flex flex-column text-center p-5"
+                style="background-color: #ffffff;">
+                <div class="col">
+                    <h3>Varied seafood cuisine at An Cua</h3>
+                </div>
+                <div class="col">
+                    <p>In a harmonious space with familiar interiors and modern amenities, we are pleased to welcome
+                        every guest with a thoughtfully prepared meal with all our warmth.</p>
+                </div>
+                <div class="col"><button class="w-100">Reservations</button></div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="row justify-content-center align-items-center g-2 d-flex flex-column text-center">
+                <div class="col"><img src="./assets/imgs/IMG_1592-removebg-preview 2 (1).png" alt=""></div>
+                <div class="col">
+                    <p>“At An Cua, each seafood dish is not just a meal but a journey to explore
+                        the finest flavors of the ocean.”</p>
+                </div>
+
+            </div>
+            <div class="row justify-content-center align-items-center g-2">
+                <div class="col"><img src="./assets/imgs/Rectangle 2.png" class="w-100" alt="" srcset=""></div>
+                <div class="col"><img src="./assets/imgs/Rectangle 3.png" class="w-100" alt="" srcset=""></div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- Bootstrap 5 CSS CDN -->
+
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Glide('.glide', {
+            type: 'carousel',  // Hoặc 'slider' nếu bạn không muốn nó tự lặp lại
+            startAt: 0,        // Slide bắt đầu từ slide 0
+            perView: 1,        // Hiển thị 1 ảnh mỗi lần
+            autoplay: 3000     // Tự động chuyển sau mỗi 3000ms (3 giây)
+        }).mount();
+    });
+</script>
+
+</html>

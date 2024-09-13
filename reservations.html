@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <head>
+        <!-- Link to Google Font: Newsreader -->
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
+    </head>
+    <style>
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            font-family: 'Newsreader', serif;
+            color: #907F4F;
+        }
+
+        button {
+            background-color: #907F4F;
+            border: 0;
+            padding: 10px 20px;
+            font-family: 'Newsreader', serif;
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class=" " style="position: relative; text-align: center;">
+        <img src="./assets/imgs/Tooltip.png" class="w-100" alt="">
+        <h1 class="text-overlay" style="color: #ffffff; font-family: 'Alex Brush', cursive; position: absolute;  top: 50%;
+    left: 50%;  transform: translate(-50%, -50%);  margin: 0; font-size: 3rem">
+            Reservations at An Cua</h1>
+    </section>
+
+    <section class="text-center">
+        <h1>Book a table</h1>
+        <p>Please note that your reservation is secured when you receive a confirmation via email or message.</p>
+
+    </section>
+    <section class="container mt-5">
+        <form>
+            <div class="row">
+                <!-- Name -->
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Name*</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your name" required>
+                </div>
+                <!-- Email -->
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email*</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your email" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Phone Number -->
+                <div class="col-md-6 mb-3">
+                    <label for="number" class="form-label">Number*</label>
+                    <div class="input-group">
+                        <span class="input-group-text">+84</span>
+                        <input type="tel" class="form-control" id="number" placeholder="Your number" required>
+                    </div>
+                </div>
+                <!-- Arrival Date -->
+                <div class="col-md-6 mb-3">
+                    <label for="arrival" class="form-label">Arrival Date*</label>
+                    <input type="date" class="form-control" id="arrival" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Booking Time -->
+                <div class="col-md-6 mb-3">
+                    <label for="bookingTime" class="form-label">Booking time*</label>
+                    <input type="time" class="form-control" id="bookingTime" required>
+                </div>
+                <!-- Number of Guests -->
+                <div class="col-md-6 mb-3">
+                    <label for="guests" class="form-label">Number of guests*</label>
+                    <input type="number" class="form-control" id="guests" placeholder="Number of guests" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Message -->
+                <div class="col-md-12 mb-3">
+                    <label for="message" class="form-label">Message*</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-primary">Request</button>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Bootstrap 5 CSS CDN -->
+
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Glide('.glide', {
+            type: 'carousel',  // Hoặc 'slider' nếu bạn không muốn nó tự lặp lại
+            startAt: 0,        // Slide bắt đầu từ slide 0
+            perView: 1,        // Hiển thị 1 ảnh mỗi lần
+            autoplay: 3000     // Tự động chuyển sau mỗi 3000ms (3 giây)
+        }).mount();
+    });
+</script>
+
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <head>
+        <!-- Link to Google Font: Newsreader -->
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
+    </head>
+    <style>
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            font-family: 'Newsreader', serif;
+            color: #907F4F;
+        }
+
+        button {
+            background-color: #907F4F;
+            border: 0;
+            padding: 10px 20px;
+            font-family: 'Newsreader', serif;
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section
+        style="height: 100vh; background-image: url(./assets/imgs/container\ \(2\).png); background-position: center; background-size: cover;">
+        <div class="container h-100 d-flex   justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center flex-column g-2 text-center p-3"
+                style="background-color: #FFFFFF; opacity: .8; ">
+                <div class="col">
+                    <h1>Thank you</h1>
+                </div>
+                <div class="col">
+                    <p>Thank you for your booking request! We will get back to you in the soonest time via email.</p>
+                </div>
+                <div class="col">
+                    <p>Please note that your reservation is secured when you receive a confirmation via email or
+                        message.</p>
+                </div>
+                <div class="col">
+                    <button>Back to home</button>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 CSS CDN -->
+
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        new Glide('.glide', {
+            type: 'carousel',  // Hoặc 'slider' nếu bạn không muốn nó tự lặp lại
+            startAt: 0,        // Slide bắt đầu từ slide 0
+            perView: 1,        // Hiển thị 1 ảnh mỗi lần
+            autoplay: 3000     // Tự động chuyển sau mỗi 3000ms (3 giây)
+        }).mount();
+    });
+</script>
+
+</html>
