@@ -18,6 +18,9 @@
 
     </head>
     <style>
+        html{
+            overflow-x: hidden;
+        }
         .h1,
         .h2,
         .h3,
@@ -42,13 +45,123 @@
             font-family: 'Newsreader', serif;
             color: #ffffff;
         }
+   
     </style>
 
 </head>
 
 <body>
-    <header class="header p-0">
-        <div class="container">
+    <header style="
+    width: auto;
+    overflow: hidden;
+" class="header p-0">
+        <style>
+            /* Styling for desktop and tablet */
+            .row.justify-content-between.align-items-center {
+                background: #EBEBDA;
+                padding: 0 5rem;
+            }
+            .menu-item {
+                color: #907F4F;
+                padding: 0 15px;
+                font-size: 18px;
+                position: relative;
+                cursor: pointer;
+            }
+    
+            .menu-item:hover {
+                color: #907F4F;
+            }
+    
+            .menu-item:hover::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 100%;
+                height: 2px;
+                background-color: #907F4F;
+            }
+    
+            header .list-unstyled {
+                display: flex;
+            }
+    
+            /* Mobile-specific styling */
+            @media (max-width: 768px) {
+                /* Hide desktop menu and show burger icon only on mobile */
+                .social-icons, .language, .list-unstyled {
+                    display: none;
+                }
+    
+                /* Show burger menu on mobile */
+                .burger-menu {
+                    display: block;
+                    font-size: 20px;
+                    color: #907F4F;
+                    cursor: pointer;
+                }
+    
+                /* Mobile menu full screen */
+                .mobile-menu {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #EBEBDA;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column-reverse;
+                    z-index: 1000;
+                }
+                .mobile-menu ul {
+                
+                }
+                .mobile-menu.active {
+                    display: flex;
+                }
+    
+                .mobile-menu li {
+                    list-style: none;
+                    font-size: 24px;
+                    margin: 15px 0;
+                    color: #907F4F;
+                }
+    
+                /* X button to close menu */
+                .close-menu {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    font-size: 30px;
+                    color: #907F4F;
+                    cursor: pointer;
+                }
+                #pc-nav{
+                    display: none;
+                }
+                #nav-social {
+                    display: none !important;
+                }
+                .row.justify-content-between.align-items-center {
+                    padding: 0 1rem;
+                }
+                .row.justify-content-between.align-items-center #logo_  {
+                    width: 46%;
+                }
+            }
+    
+            /* Hide burger menu and mobile menu on desktop and tablet */
+            @media (min-width: 769px) {
+                .burger-menu, .mobile-menu {
+                    display: none;
+                }
+            }
+        </style>
+    
+        <div class="">
             <div class="row justify-content-between align-items-center">
                 <!-- Language Section -->
                 <div class="col-auto">
@@ -58,55 +171,200 @@
                             alt="Frame" class="img-fluid">
                     </div>
                 </div>
-
+    
                 <!-- Logo -->
-                <div class="col-auto">
+                <div class="col-auto" id="logo_">
                     <img src="./assets/imgs/logo.png" alt="logo" class="logo img-fluid">
                 </div>
-
+    
                 <!-- Social Media Icons -->
                 <div class="col-auto">
-                    <div class="social-icons d-flex">
+                    <div class="social-icons d-flex" id="nav-social">
                         <img src="https://cdn.animaapp.com/projects/6655aeb440dc60e62a312d3a/releases/66e2547466d6f2132ddf06d9/img/line-md-facebook-3.svg"
                             alt="Facebook" class="me-2">
                         <img src="https://cdn.animaapp.com/projects/6655aeb440dc60e62a312d3a/releases/66e2547466d6f2132ddf06d9/img/uil-instagram-8.svg"
                             alt="Instagram">
                     </div>
+                       <!-- Burger Menu Icon (only visible on mobile) -->
+            <div class="container d-flex justify-content-center  ">
+                <span class="burger-menu">☰</span>
+            </div>
+    
                 </div>
             </div>
-
-            <!-- Navigation Section -->
-            <div class="row mt-3">
+    
+         
+            <!-- Navigation Section (hidden on mobile) -->
+            <div class="row mt-3" id="pc-nav">
                 <div class="container d-flex justify-content-center">
-                    <li>234324</li>
-                    <li>234324</li>
-                    <li>234324</li>
-                    <li>234324</li>
-                    <li>234324</li>
+                    <ul class="list-unstyled">
+                        <li class="menu-item">Delivery</li>
+                        <li class="menu-item">Reservations</li>
+                        <li class="menu-item">Menu</li>
+                        <li class="menu-item">Home</li>
+                    </ul>
                 </div>
-
             </div>
+    
+            <!-- Fullscreen Mobile Menu -->
+            <div class="mobile-menu">
+                <span class="close-menu">×</span>
+                
+                <ul style="
+                padding: 0;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            ">
+                    <li>Home</li>
+                    <li>Menu</li>
+                    <li>Reservations</li>
+                    <li>Delivery</li>
+                    <div class="social-icons d-flex mt-3" id="nav-socia"> 
+                        <img src="https://cdn.animaapp.com/projects/6655aeb440dc60e62a312d3a/releases/66e2547466d6f2132ddf06d9/img/line-md-facebook-3.svg"
+                            alt="Facebook" class="me-2">
+                        <img src="https://cdn.animaapp.com/projects/6655aeb440dc60e62a312d3a/releases/66e2547466d6f2132ddf06d9/img/uil-instagram-8.svg"
+                            alt="Instagram">
+                    </div>
+                </ul>
+                <style>
+                    .menu-item-mobile {
+                        font-size: 24px;
+                        margin: 15px 0;
+                        color: #907F4F;
+                        position: relative;
+                        cursor: pointer;
+                    }
+                    .menu-item-mobile {
+                        font-size: 24px;
+                        margin: 15px 0;
+                        color: #907F4F;
+                        position: relative;
+                        cursor: pointer;
+                    }
+                
+                    .menu-item-mobile:hover {
+                        color: #907F4F; /* Giữ màu sắc khi hover */
+                    }
+                
+                    .menu-item-mobile:hover::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -5px;
+                        width: 100%;
+                        height: 2px;
+                        background-color: #907F4F; /* Màu của line dưới chữ */
+                    }
+                
+                    .menu-item-mobile {
+                        position: relative;
+                    }
+                </style>
+            </div>
+    
         </div>
     </header>
-    <section
-        style="height: 100vh; background-image: url(./assets/imgs/container.png); background-position: center; background-size: cover;">
+    
+    <script>
+        // JavaScript to handle opening and closing the mobile menu
+        document.querySelector('.burger-menu').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('active');
+        });
+    
+        // JavaScript to close the mobile menu when clicking the "X" button
+        document.querySelector('.close-menu').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.remove('active');
+        });
+    </script>
+    
+    <section id="banner" style="position: relative;">
+        <img src="./assets/imgs/container.png" class="w-100" alt="">
         <div class="container h-100">
-            <div class="row justify-content-center align-items-center g-2 h-100 ">
-                <div class="col-12 d-flex justify-content-center align-items-center flex-column ">
-                    <div><img style="width: 20vw;" src="./assets/imgs/IMG_1592-removebg-preview 2.png" alt=""></div>
-                    <div>
-                        <button
-                            style="background-color: #907F4F; border: 0; padding: 10px 20px; width: 200px; color: #FFFFFF; font-family: 'Newsreader', serif;">Menu</button>
-                        <button
-                            style="background-color: #907F4F; border: 0; padding: 10px 20px; width: 200px; color: #FFFFFF; font-family: 'Newsreader', serif;">Reservations</button>
-
+            <div class="row justify-content-center align-items-center g-2 h-100">
+                <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                    <div style="
+                    align-items: center;
+                    text-align: center;
+                "><img class="main-image" src="./assets/imgs/IMG_1592-removebg-preview 2.png" alt=""></div>
+                    <div class="button-group">
+                        <button class="menu-button">Menu</button>
+                        <button class="menu-button">Reservations</button>
                     </div>
                 </div>
             </div>
         </div>
-
+    
+        <style>
+            /* Base styles for desktop */
+            .main-image {
+                width: 20vw;
+            }
+    
+            .menu-button {
+                background-color: #907F4F;
+                border: 0;
+                padding: 10px 20px;
+                width: 200px;
+                color: #FFFFFF;
+                font-family: 'Newsreader', serif;
+                margin: 0 10px;
+            }
+    
+            .button-group {
+                display: flex;
+                justify-content: center;
+            }
+    
+            .container .h-100 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+    
+            /* Responsive adjustments for mobile */
+            @media (max-width: 768px) {
+                #banner {
+                    height: 500px;
+                }
+                #banner >img {
+                    height: 500px;
+                    object-fit: cover;
+                }
+                /* Increase image height on mobile */
+                .main-image {
+                    height: 100%;
+                    width: 50%;
+    object-fit: cover;
+                }
+    
+                /* Stack buttons vertically with some gap */
+                .button-group {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px; /* Add gap between the buttons */
+                    margin-top: 20px;
+                }
+    
+                .menu-button {
+                    width: 100%; /* Make buttons full-width on mobile */
+                    max-width: 300px; /* Optional: Set a maximum width for buttons */
+                }
+            }
+        </style>
     </section>
-    <section>
+    
+    <section id="welcome"
+    >
+    <style>
+             #welcome {
+                 margin-top: 5rem ;
+             }
+             .mySwiper1 {
+                margin-top: 5rem;
+             }
+         </style>
         <div class="container  ">
             <h1 class="text-center" style="font-family: 'Newsreader', serif ; color: #907F4F;">Welcome to An Cua</h1>
             <p class="text-center">"At An Cua, we not only bring the distinctive flavors of crab and shrimp but also
@@ -114,29 +372,46 @@
                 culinary experience through the perfect combination with exquisite sauces. With respect for nature and
                 the richness of Vietnam's seas, we hope that each dish here will take diners on a surprising and
                 delightful journey of taste exploration."</p>
-            <div class="swiper mySwiper1 " style="width: 80%;">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./assets/imgs/new (1).png" class="d-block w-100" alt="Slide 1">
+                <div class="swiper mySwiper1" style="width: 80%;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img style="" src="./assets/imgs/new (1).png" class="d-block w-100" alt="Slide 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img style="" src="./assets/imgs/new (2).png" class="d-block w-100" alt="Slide 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img style="" src="./assets/imgs/new (3).png" class="d-block w-100" alt="Slide 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img style="" src="./assets/imgs/new (4).png" class="d-block w-100" alt="Slide 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img style="" src="./assets/imgs/new (5).png" class="d-block w-100" alt="Slide 5">
+                        </div>
+                        <div class="swiper-slide">
+                            <img style="" src="./assets/imgs/new (6).png" class="d-block w-100" alt="Slide 6">
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="./assets/imgs/new (2).png" class="d-block w-100" alt="Slide 2">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./assets/imgs/new (3).png" class="d-block w-100" alt="Slide 3">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./assets/imgs/new (4).png" class="d-block w-100" alt="Slide 4">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./assets/imgs/new (5).png" class="d-block w-100" alt="Slide 5">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./assets/imgs/new (6).png" class="d-block w-100" alt="Slide 6">
-                    </div>
-
                 </div>
-            </div>
+                
+                <style>
+                  
+                
+                    /* Mobile-specific styling */
+                    @media (max-width: 768px) {
+                        .swiper {
+                            width: 100% !important; /* Full width on mobile */
+                            margin-left: 0; /* Remove any margin on mobile */
+                            margin-right: 0;
+                        }
+                
+                        .swiper-slide img {
+                            height: 300px; /* Keep image height constant */
+                        }
+                    }
+                </style>
+                
 
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
@@ -170,37 +445,37 @@
     <section class="mt-5 mb-5">
         <div class="container">
             <div class="row justify-content-center align-items-center g-2">
-                <div class="col-md-6">
+                <!-- Swiper hiển thị trên desktop, ẩn trên mobile -->
+                <div class="col-md-6 d-none d-md-block">
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (1).png" class="d-block w-100" alt="Slide 1">
+                                <img src="./assets/imgs/slide (1).png" class="d-block img-slide" alt="Slide 1">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (2).png" class="d-block w-100" alt="Slide 2">
+                                <img src="./assets/imgs/slide (2).png" class="d-block img-slide" alt="Slide 2">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (3).png" class="d-block w-100" alt="Slide 3">
+                                <img src="./assets/imgs/slide (3).png" class="d-block img-slide" alt="Slide 3">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (4).png" class="d-block w-100" alt="Slide 4">
+                                <img src="./assets/imgs/slide (4).png" class="d-block img-slide" alt="Slide 4">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (5).png" class="d-block w-100" alt="Slide 5">
+                                <img src="./assets/imgs/slide (5).png" class="d-block img-slide" alt="Slide 5">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (6).png" class="d-block w-100" alt="Slide 6">
+                                <img src="./assets/imgs/slide (6).png" class="d-block img-slide" alt="Slide 6">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./assets/imgs/slide (7).png" class="d-block w-100" alt="Slide 7">
+                                <img src="./assets/imgs/slide (7).png" class="d-block img-slide" alt="Slide 7">
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
-                <div class="col-md-6   text-center">
+            
+                <!-- Mô tả ở giữa -->
+                <div class="col-md-6 text-center">
                     <h3 style="color:  #907F4F">Cozy Atmosphere</h3>
                     <p style="color: #7C7C7C;">With a capacity of 20-30 guests, the first floor of An Cua is ready to
                         welcome those who wish to
@@ -212,11 +487,106 @@
                     </p>
                     <button>Reservations</button>
                 </div>
+            
+                <!-- Swiper chỉ hiển thị trên mobile, ẩn trên desktop -->
+                <div class="col-12 d-block d-md-none">
+                    <div class="swiper mySwiperMobile" style="margin-top: 20px;">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img style="width: 100%; height: 500px !important ; object-fit: cover;"  src="./assets/imgs/slide (1).png" class="d-block img-slide" alt="Slide 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img style="width: 100%; height: 500px !important ; object-fit: cover;"  src="./assets/imgs/slide (2).png" class="d-block img-slide" alt="Slide 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img style="width: 100%; height: 500px !important ; object-fit: cover;"  src="./assets/imgs/slide (3).png" class="d-block img-slide" alt="Slide 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img style="width: 100%; height: 500px !important ; object-fit: cover;"  src="./assets/imgs/slide (4).png" class="d-block img-slide" alt="Slide 4">
+                            </div>
+                            <div class="swiper-slide">
+                                <img style="width: 100%; height: 500px !important ; object-fit: cover;"  src="./assets/imgs/slide (5).png" class="d-block img-slide" alt="Slide 5">
+                            </div>
+                            <div class="swiper-slide">
+                                <img style="width: 100%; height: 500px !important ; object-fit: cover;"  src="./assets/imgs/slide (6).png" class="d-block img-slide" alt="Slide 6">
+                            </div>
+                            <div class="swiper-slide">
+                                <img  style="width: 100%; height: 500px !important ; object-fit: cover;" src="./assets/imgs/slide (7).png" class="d-block img-slide" alt="Slide 7">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <style>
+                /* Swiper trên desktop */
+               
+            
+                /* Swiper cho mobile */
+                .swiper.mySwiperMobile {
+                    width: 100%; /* Full width on mobile */
+                    height: 500px;
+                    margin-top: 20px; /* Add margin-top */
+                }
+            
+                /* Ẩn Swiper trên desktop khi ở mobile */
+                @media (max-width: 768px) {
+                    .mySwiper {
+                        display: none;
+                    }
+            
+                    .mySwiperMobile {
+                        display: block;
+                    }
+                }
+            
+                /* Ẩn Swiper dưới khi trên desktop */
+                @media (min-width: 769px) {
+                    .mySwiperMobile {
+                        display: none;
+                    }
+                }
+            </style>
+                        
+            
+            <style>
+                /* Adjust for mobile */
+                @media (max-width: 768px) {
+                    /* Change the order of elements on mobile */
+                    .order-2 {
+                        order: 2 !important;
+                    }
+            
+                    .order-1 {
+                        order: 1 !important;
+                    }
+                }
+            </style>
+            
 
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     var swiper = new Swiper('.mySwiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                        loop: true, // Nếu bạn muốn slide tự động lặp lại
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        autoplay: {
+                            delay: 1000, // Thời gian giữa mỗi slide (tính bằng milliseconds)
+                        },
+                    });
+                });
+            </script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var swiper = new Swiper('.mySwiperMobile', {
                         slidesPerView: 1,
                         spaceBetween: 10,
                         loop: true, // Nếu bạn muốn slide tự động lặp lại
@@ -240,9 +610,9 @@
 
     <section class="mt-5 mb-5">
         <div class="container">
-            <div class="row justify-content-center  g-2">
-
-                <div class="col  ">
+            <div class="row justify-content-center g-2">
+                <!-- Nội dung chính -->
+                <div class="col">
                     <h3 style="color: #907F4F;">An Cua cuisine</h3>
                     <p style="color: #7C7C7C;">
                         At An Cua, we take pride in offering you fresh seafood delicately prepared with our special
@@ -252,74 +622,223 @@
                     </p>
                     <button>Reservations</button>
                 </div>
-                <div class="col"><img class="w-100"
-                        src="./assets/imgs/408701399_872193758245343_2884378635898021199_n.png" alt=""></div>
+                <!-- Ảnh trên desktop, ẩn trên mobile -->
+                <div class="col d-none d-md-block">
+                    <img class="w-100" src="./assets/imgs/408701399_872193758245343_2884378635898021199_n.png" alt="">
+                </div>
             </div>
+            
+            <!-- Phần chỉ hiển thị trên mobile -->
+            <div class="row justify-content-center g-2 d-block d-md-none" style="margin-top: 20px;">
+                <div class="col-12">
+                    <div class="row">
+                        <!-- Nội dung ở cột 1 -->
+                        <div class="col-6">
+                            <p style="color: #7C7C7C;">
+                                We are committed to providing diners with a complete culinary experience where every bite
+                                is rich and full of emotion.
+                            </p>
+                        </div>
+                        <!-- Ảnh ở cột 2 -->
+                        <div class="col-6">
+                            <img class="w-100" src="./assets/imgs/408701399_872193758245343_2884378635898021199_n.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                /* Styles cho phần nội dung */
+                p {
+                    color: #7C7C7C;
+                }
+            
+                /* Ẩn ảnh trên mobile */
+                @media (max-width: 768px) {
+                    .d-md-block {
+                        display: none !important;
+                    }
+            
+                    /* Cột mới với nội dung và ảnh cho mobile */
+                    .row.d-block.d-md-none .col-6 p {
+                        color: #7C7C7C;
+                        font-family: inherit;
+                    }
+                }
+            </style>
+            
 
         </div>
     </section>
-    <section>
+    <section class="image-gallery">
         <div class="row justify-content-center align-items-center g-2">
             <div class="col m-0 p-0">
-                <img class="w-100 m-0 p-0 w-100 h-100" src="./assets/imgs/fo (1).png" alt="Slide 1">
+                <img class="img-fluid img-custom" src="./assets/imgs/fo (1).png" alt="Slide 1">
             </div>
             <div class="col m-0 p-0">
-                <img class="w-100 m-0 p-0 w-100 h-100" src="./assets/imgs/fo (2).png" alt="Slide 2">
+                <img class="img-fluid img-custom" src="./assets/imgs/fo (2).png" alt="Slide 2">
             </div>
             <div class="col m-0 p-0">
-                <img class="w-100 m-0 p-0 w-100 h-100" src="./assets/imgs/fo (3).png" alt="Slide 3">
+                <img class="img-fluid img-custom" src="./assets/imgs/fo (3).png" alt="Slide 3">
             </div>
             <div class="col m-0 p-0">
-                <img class="w-100 m-0 p-0 w-100 h-100" src="./assets/imgs/fo (4).png" alt="Slide 4">
+                <img class="img-fluid img-custom" src="./assets/imgs/fo (4).png" alt="Slide 4">
             </div>
             <div class="col m-0 p-0">
-                <img class="w-100 m-0 p-0 w-100 h-100" src="./assets/imgs/fo (5).png" alt="Slide 5">
+                <img class="img-fluid img-custom" src="./assets/imgs/fo (5).png" alt="Slide 5">
             </div>
-
-
         </div>
-
+    
+        <style>
+            /* General styling for images */
+            .img-custom {
+                height: 300px !important; /* Fixed height for the images */
+                object-fit: cover; /* Keep image aspect ratio intact */
+                width: 100%; /* Ensure images fill their container on larger screens */
+            }
+    
+            /* Mobile-specific styling */
+            @media (max-width: 768px) {
+                .image-gallery {
+                    overflow-x: scroll; /* Enable horizontal scrolling */
+                    white-space: nowrap; /* Prevent line breaks, making the images align horizontally */
+                    -ms-overflow-style: none;  /* Hide scroll bar in IE and Edge */
+                    scrollbar-width: none;  /* Hide scroll bar in Firefox */
+                }
+    
+                .image-gallery::-webkit-scrollbar {
+                    display: none; /* Hide scroll bar in WebKit browsers (Chrome, Safari) */
+                }
+    
+                .image-gallery .col img {
+                    display: inline-block; /* Force columns to be inline for horizontal scrolling */
+                    width: 300px !important; /* Each image takes up 35% of the viewport width */
+                }
+           .image-gallery .row.justify-content-center.align-items-center.g-2 {
+                width: 1200px;
+            }
+                .img-custom {
+                    width: 100%; /* Make sure images fill the 35% container */
+                }
+            }
+        </style>
     </section>
+    
     <section class="mt-5  ">
-        <div class="container text-center ">
-            <h3 style="color:#907F4F;" class="mt-5 mb-2">the menu</h3>
-            <div class="row justify-content-center align-items-center g-2">
-
-                <div class="col  m-1">
-                    <img class="w-100" src="./assets/imgs/menu (1).png" alt="">
-                </div>
-                <div class="col  m-1">
-                    <img class="w-100" src="./assets/imgs/menu (2).png" alt="">
-                </div>
-                <div class="col  m-1">
-                    <img class="w-100" src="./assets/imgs/menu (3).png" alt="">
-                </div>
+        <style>
+            .container h3 {
+                margin-top: 5rem  !important;
+                margin-bottom: 3rem   !important;
+            }
+        </style>
+      <div class="container text-center ">
+        <h3 style="color:#907F4F;" class="mt-5 mb-2">the menu</h3>
+        <div class="row justify-content-center align-items-center g-2">
+            <div class="col m-1">
+                <img class="w-100 img-fluid" src="./assets/imgs/menu (1).png" alt="Menu 1">
             </div>
-            <button>View all menu</button>
+            <div class="col m-1">
+                <img class="w-100 img-fluid" src="./assets/imgs/menu (2).png" alt="Menu 2">
+            </div>
+            <!-- Hình ảnh thứ 3 sẽ bị ẩn trên mobile -->
+            <div class="col m-1 menu-third">
+                <img class="w-100 img-fluid" src="./assets/imgs/menu (3).png" alt="Menu 3">
+            </div>
         </div>
+        <button class="mt-5 mb-5">View all menu</button>
+    </div>
+    
+    <style>
+        /* Ẩn hình ảnh thứ 3 trên màn hình mobile */
+        @media (max-width: 768px) {
+            .menu-third {
+                display: none;
+            }
+    
+            /* Điều chỉnh kích thước ảnh trên mobile */
+            .row .col {
+                width: 45%; /* Mỗi cột chiếm 45% màn hình trên mobile */
+            }
+    
+            img.img-fluid {
+                max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng của cột */
+                height: auto; /* Giữ nguyên tỷ lệ của ảnh */
+            }
+        }
+    
+        /* Điều chỉnh cho desktop */
+        img.img-fluid {
+            max-width: 100%; /* Đảm bảo ảnh không bị vượt quá chiều rộng cột */
+            height: auto; /* Giữ nguyên tỷ lệ ảnh */
+        }
+    </style>
+    
     </section>
-    <section class="mt-5">
+    <section class="mt-5" id="contact">
         <div class="row g-2">
             <!-- Cột nội dung sẽ ở bên trái trên desktop (order-lg-1), và ở dưới trên mobile (order-md-2) -->
             <div
                 class="col-lg-6 col-md-12 col-sm-12 align-items-center d-flex flex-column text-center order-lg-1 order-md-2 order-sm-2">
                 <img class="img-fluid" style="max-width: 30vw;" src="./assets/imgs/IMG_1592-removebg-preview 3.png"
                     alt="">
-                <p>56 Truong Quyen, District 3, Ho Chi Minh City, Vietnam</p>
-                <h4>Opening Hours</h4>
-                <p>11am - 22pm<br>Monday - Sunday</p>
-                <h4>Hotline</h4>
-                <p>(+84) 81 2017 766</p>
-                <h4>Keep in touch</h4>
-                <p></p>
-                <h4>Booking now</h4>
-                <button>Reservations</button>
+                    <p>56 Truong Quyen, District 3, Ho Chi Minh City, Vietnam</p>
+                    <h4>Opening Hours</h4>
+                    <p>11am - 22pm<br>Monday - Sunday</p>
+                    <h4>Hotline</h4>
+                    <p>(+84) 81 2017 766</p>
+                    <h4>Keep in touch</h4>
+                    
+                    <p>
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 9 4 C 6.2504839 4 4 6.2504839 4 9 L 4 41 C 4 43.749516 6.2504839 46 9 46 L 25.832031 46 A 1.0001 1.0001 0 0 0 26.158203 46 L 31.832031 46 A 1.0001 1.0001 0 0 0 32.158203 46 L 41 46 C 43.749516 46 46 43.749516 46 41 L 46 9 C 46 6.2504839 43.749516 4 41 4 L 9 4 z M 9 6 L 41 6 C 42.668484 6 44 7.3315161 44 9 L 44 41 C 44 42.668484 42.668484 44 41 44 L 33 44 L 33 30 L 36.820312 30 L 38.220703 23 L 33 23 L 33 21 C 33 20.442508 33.05305 20.398929 33.240234 20.277344 C 33.427419 20.155758 34.005822 20 35 20 L 38 20 L 38 14.369141 L 37.429688 14.097656 C 37.429688 14.097656 35.132647 13 32 13 C 29.75 13 27.901588 13.896453 26.71875 15.375 C 25.535912 16.853547 25 18.833333 25 21 L 25 23 L 22 23 L 22 30 L 25 30 L 25 44 L 9 44 C 7.3315161 44 6 42.668484 6 41 L 6 9 C 6 7.3315161 7.3315161 6 9 6 z M 32 15 C 34.079062 15 35.38736 15.458455 36 15.701172 L 36 18 L 35 18 C 33.849178 18 32.926956 18.0952 32.150391 18.599609 C 31.373826 19.104024 31 20.061492 31 21 L 31 25 L 35.779297 25 L 35.179688 28 L 31 28 L 31 44 L 27 44 L 27 28 L 24 28 L 24 25 L 27 25 L 27 21 C 27 19.166667 27.464088 17.646453 28.28125 16.625 C 29.098412 15.603547 30.25 15 32 15 z"/></svg>
+
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 12 3 C 7.0414839 3 3 7.0414839 3 12 L 3 38 C 3 42.958516 7.0414839 47 12 47 L 38 47 C 42.958516 47 47 42.958516 47 38 L 47 12 C 47 7.0414839 42.958516 3 38 3 L 12 3 z M 12 5 L 38 5 C 41.877484 5 45 8.1225161 45 12 L 45 38 C 45 41.877484 41.877484 45 38 45 L 12 45 C 8.1225161 45 5 41.877484 5 38 L 5 12 C 5 8.1225161 8.1225161 5 12 5 z M 38 7 C 36.904545 7 36 7.9045455 36 9 L 36 12 C 36 13.095455 36.904545 14 38 14 L 41 14 C 42.095455 14 43 13.095455 43 12 L 43 9 C 43 7.9045455 42.095455 7 41 7 L 38 7 z M 38 9 L 41 9 L 41 12 L 38 12 L 38 9 z M 25 12 C 21.331661 12 18.01623 13.540914 15.648438 16 L 8 16 A 1.0001 1.0001 0 0 0 7 17 L 7 37 C 7 40.301625 9.6983746 43 13 43 L 37 43 C 40.301625 43 43 40.301625 43 37 L 43 17 A 1.0001 1.0001 0 0 0 42 16 L 34.351562 16 C 31.98377 13.540914 28.668339 12 25 12 z M 25 14 C 31.073477 14 36 18.926523 36 25 C 36 31.073477 31.073477 36 25 36 C 18.926523 36 14 31.073477 14 25 C 14 18.926523 18.926523 14 25 14 z M 25 16 A 1.0001 1.0001 0 0 0 24.589844 16.083984 C 19.831681 16.311415 16 20.186041 16 25 C 16 29.959394 20.041635 34 25 34 C 29.958365 34 34 29.959394 34 25 C 34 20.187371 30.170385 16.313404 25.414062 16.083984 A 1.0001 1.0001 0 0 0 25 16 z M 9 18 L 14.068359 18 C 12.766308 20.024088 12 22.423973 12 25 C 12 32.158523 17.841477 38 25 38 C 32.158523 38 38 32.158523 38 25 C 38 22.423973 37.233692 20.024088 35.931641 18 L 41 18 L 41 37 C 41 39.220375 39.220375 41 37 41 L 13 41 C 10.779625 41 9 39.220375 9 37 L 9 18 z M 25 18 C 28.877635 18 32 21.121394 32 25 C 32 28.878606 28.877635 32 25 32 C 21.122365 32 18 28.878606 18 25 C 18 21.121394 21.122365 18 25 18 z"/></svg>
+
+                    </p>
+                    <h4>Booking now</h4>
+                    
+                    <style>
+                       #contact p {
+                            color: black !important; /* Màu chữ của thẻ p */
+                        }
+                    
+                     #contact   h4 {
+                            color: #907F4F !important; /* Màu chữ của thẻ h4 */
+                        }
+                    </style>
+                    
+                    <button class="btn-reservation">Reservations</button>
+
             </div>
 
             <!-- Cột ảnh sẽ ở bên phải trên desktop và ở trên trên mobile -->
-            <div class="col-lg-6 col-md-12 col-sm-12 order-lg-2 order-md-1 order-sm-1">
-                <img class="img-fluid w-100" src="./assets/imgs/footer.png" alt="">
+            <div class="col-lg-6 col-md-12 col-sm-12 order-lg-2 order-md-1 order-sm-1 footer-image">
+                <img class="img-fluid w-100" src="./assets/imgs/footer.png" alt="Footer Image">
             </div>
+            <style>
+                /* Điều chỉnh cho nút và ảnh trên desktop */
+                .btn-reservation {
+                    padding: 10px 20px;
+                    background-color: #907F4F;
+                    border: none;
+                    color: #fff;
+                    font-size: 16px;
+                }
+            
+                /* Điều chỉnh cho mobile */
+                @media (max-width: 768px) {
+                    /* Ẩn ảnh footer trên mobile */
+                    .footer-image {
+                        display: none;
+                    }
+            
+                    /* Nút reservations full width trên mobile */
+                    .btn-reservation {
+                        width: 100%; /* Full width */
+                        padding: 15px; /* Tăng padding để nút trông cân đối hơn */
+                        font-size: 18px; /* Tăng kích thước chữ cho mobile */
+                    }
+                }
+            </style>
         </div>
     </section>
 
